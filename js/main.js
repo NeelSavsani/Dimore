@@ -6,6 +6,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initStickyHeader();
+  initPillNav();
   initMobileMenu();
   initPortfolioFilter();
   initLightbox();
@@ -605,5 +606,179 @@ function initPageContactForm() {
     alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 }
+
+/* ==========================================================================
+   11. PillNav Component Interactive Logic (from React Bits)
+   ========================================================================== */
+function initPillNav() {
+  const navContainer = document.querySelector('.pill-nav-container');
+  if (!navContainer) return;
+
+  const pills = document.querySelectorAll('.pill');
+  const logo = document.querySelector('.pill-logo');
+  const logoImg = logo ? logo.querySelector('img') : null;
+  const hamburger = document.querySelector('.mobile-menu-button');
+  const mobileMenu = document.querySelector('.mobile-menu-popover');
+
+  const circleRefs = [];
+  const tlRefs = [];
+  const activeTweenRefs = [];
+  const ease = 'power3.easeOut';
+
+  function layout() {
+    pills.forEach((pill, i) => {
+      let circle = pill.querySelector('.hover-circle');
+      if (!circle) {
+        circle = document.createElement('span');
+        circle.className = 'hover-circle';
+        circle.setAttribute('aria-hidden', 'true');
+        pill.prepend(circle);
+      }
+      circleRefs[i] = circle;
+
+      const rect = pill.getBoundingClientRect();
+      const { width: w, height: h } = rect;
+      if (w === 0 || h === 0) return;
+
+      const R = ((w * w) / 4 + h * h) / (2 * h);
+      const D = Math.ceil(2 * R) + 2;
+      const delta = Math.ceil(R - Math.sqrt(Math.max(0, R * R - (w * w) / 4))) + 1;
+      const originY = D - delta;
+
+      circle.style.width = `${D}px`;
+      circle.style.height = `${D}px`;
+      circle.style.bottom = `-${delta}px`;
+
+      if (window.gsap) {
+        gsap.set(circle, {
+          xPercent: -50,
+          scale: 0,
+          transformOrigin: `50% ${originY}px`
+        });
+
+        const label = pill.querySelector('.pill-label');
+        const hoverLabel = pill.querySelector('.pill-label-hover');
+
+        if (label) gsap.set(label, { y: 0 });
+        if (hoverLabel) gsap.set(hoverLabel, { y: h + 12, opacity: 0 });
+
+        if (tlRefs[i]) tlRefs[i].kill();
+        const tl = gsap.timeline({ paused: true });
+
+        tl.to(circle, { scale: 1.2, xPercent: -50, duration: 2, ease, overwrite: 'auto' }, 0);
+
+        if (label) {
+          tl.to(label, { y: -(h + 8), duration: 2, ease, overwrite: 'auto' }, 0);
+        }
+
+        if (hoverLabel) {
+          gsap.set(hoverLabel, { y: Math.ceil(h + 100), opacity: 0 });
+          tl.to(hoverLabel, { y: 0, opacity: 1, duration: 2, ease, overwrite: 'auto' }, 0);
+        }
+
+        tlRefs[i] = tl;
+      }
+    });
+  }
+
+  // Hover handlers
+  pills.forEach((pill, i) => {
+    pill.addEventListener('mouseenter', () => {
+      const tl = tlRefs[i];
+      if (!tl || !window.gsap) return;
+      if (activeTweenRefs[i]) activeTweenRefs[i].kill();
+      activeTweenRefs[i] = tl.tweenTo(tl.duration(), {
+        duration: 0.3,
+        ease,
+        overwrite: 'auto'
+      });
+    });
+
+    pill.addEventListener('mouseleave', () => {
+      const tl = tlRefs[i];
+      if (!tl || !window.gsap) return;
+      if (activeTweenRefs[i]) activeTweenRefs[i].kill();
+      activeTweenRefs[i] = tl.tweenTo(0, {
+        duration: 0.2,
+        ease,
+        overwrite: 'auto'
+      });
+    });
+  });
+
+  // Logo hover spin
+  if (logo && logoImg) {
+    let logoTween = null;
+    logo.addEventListener('mouseenter', () => {
+      if (!window.gsap) return;
+      if (logoTween) logoTween.kill();
+      gsap.set(logoImg, { rotate: 0 });
+      logoTween = gsap.to(logoImg, {
+        rotate: 360,
+        duration: 0.4,
+        ease,
+        overwrite: 'auto'
+      });
+    });
+  }
+
+  // Mobile menu toggle
+  let isMobileMenuOpen = false;
+  if (hamburger && mobileMenu) {
+    const lines = hamburger.querySelectorAll('.hamburger-line');
+
+    hamburger.addEventListener('click', () => {
+      isMobileMenuOpen = !isMobileMenuOpen;
+
+      if (window.gsap && lines.length >= 2) {
+        if (isMobileMenuOpen) {
+          gsap.to(lines[0], { rotation: 45, y: 3, duration: 0.3, ease });
+          gsap.to(lines[1], { rotation: -45, y: -3, duration: 0.3, ease });
+        } else {
+          gsap.to(lines[0], { rotation: 0, y: 0, duration: 0.3, ease });
+          gsap.to(lines[1], { rotation: 0, y: 0, duration: 0.3, ease });
+        }
+      }
+
+      if (window.gsap) {
+        if (isMobileMenuOpen) {
+          gsap.set(mobileMenu, { visibility: 'visible' });
+          gsap.fromTo(
+            mobileMenu,
+            { opacity: 0, y: 10, scaleY: 1 },
+            { opacity: 1, y: 0, scaleY: 1, duration: 0.3, ease, transformOrigin: 'top center' }
+          );
+        } else {
+          gsap.to(mobileMenu, {
+            opacity: 0,
+            y: 10,
+            scaleY: 1,
+            duration: 0.2,
+            ease,
+            transformOrigin: 'top center',
+            onComplete: () => gsap.set(mobileMenu, { visibility: 'hidden' })
+          });
+        }
+      } else {
+        mobileMenu.style.visibility = isMobileMenuOpen ? 'visible' : 'hidden';
+        mobileMenu.style.opacity = isMobileMenuOpen ? '1' : '0';
+      }
+    });
+
+    // Close when clicking mobile link
+    mobileMenu.querySelectorAll('.mobile-menu-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (isMobileMenuOpen) hamburger.click();
+      });
+    });
+  }
+
+  layout();
+  window.addEventListener('resize', layout);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(layout).catch(() => {});
+  }
+}
+
 
 

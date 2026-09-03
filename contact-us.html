@@ -49,114 +49,109 @@
   <!-- ==========================================================================
        Main Header & Sticky Navbar
        ========================================================================== -->
+  <!-- ==========================================================================
+       PillNav Header (React Bits Component)
+       ========================================================================== -->
   <header class="site-header">
-    <div class="main-nav-wrapper">
-      <div class="container main-nav-content">
-        <!-- Logo -->
-        <a href="index.html" class="brand-logo" title="Dimore Architectural Solutions">
-          <img src="assets/logo.png" alt="Dimore Logo">
+    <div class="pill-nav-container">
+      <nav class="pill-nav" aria-label="Primary" style="--base: #0f172a; --pill-bg: #ffffff; --hover-text: #ffffff; --pill-text: #0f172a;">
+        <!-- Circular Logo Pill -->
+        <a class="pill-logo" href="index.html" aria-label="Home">
+          <img src="assets/logo.png" alt="Dimore Logo" />
         </a>
 
-        <!-- Desktop Navigation -->
-        <nav class="desktop-navigation" aria-label="Primary navigation">
-          <ul class="nav-menu">
-            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="about-us.html" class="nav-link">About Us</a></li>
-            
-            <!-- Products Multi-level Dropdown -->
-            <li class="nav-item">
-              <a href="index.html#products" class="nav-link">
-                Products <span class="dropdown-arrow"></span>
+        <!-- Desktop Navigation Items -->
+        <div class="pill-nav-items desktop-only">
+          <ul class="pill-list" role="menubar">
+            <li role="none">
+              <a role="menuitem" href="index.html" class="pill" aria-label="Home">
+                <span class="hover-circle" aria-hidden="true"></span>
+                <span class="label-stack">
+                  <span class="pill-label">Home</span>
+                  <span class="pill-label-hover" aria-hidden="true">Home</span>
+                </span>
               </a>
-              <ul class="dropdown-menu">
-                <li class="dropdown-item">
-                  <a href="index.html#products" class="dropdown-link">
-                    Sliding Door &amp; Windows <span>&rsaquo;</span>
-                  </a>
-                  <ul class="submenu">
-                    <li><a href="index.html#products" class="submenu-link">Dura Slim</a></li>
-                    <li><a href="index.html#products" class="submenu-link">Dura Sleek</a></li>
-                    <li><a href="index.html#products" class="submenu-link">Vista Slim</a></li>
-                    <li><a href="index.html#products" class="submenu-link">Vista Sleek</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown-item">
-                  <a href="index.html#products" class="dropdown-link">
-                    Sliding Doors <span>&rsaquo;</span>
-                  </a>
-                  <ul class="submenu">
-                    <li><a href="index.html#products" class="submenu-link">Elegante</a></li>
-                    <li><a href="index.html#products" class="submenu-link">Panorama</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown-item">
-                  <a href="index.html#products" class="dropdown-link">
-                    Casement Windows <span>&rsaquo;</span>
-                  </a>
-                  <ul class="submenu">
-                    <li><a href="index.html#products" class="submenu-link">Signature Series</a></li>
-                    <li><a href="index.html#products" class="submenu-link">Slick Series</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown-item">
-                  <a href="index.html#products" class="dropdown-link">
-                    Casement Door <span>&rsaquo;</span>
-                  </a>
-                  <ul class="submenu">
-                    <li><a href="index.html#products" class="submenu-link">Single Door</a></li>
-                    <li><a href="index.html#products" class="submenu-link">Double Door</a></li>
-                    <li><a href="index.html#products" class="submenu-link">French Door</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown-item">
-                  <a href="index.html#products" class="dropdown-link">Slide &amp; Fold</a>
-                </li>
+            </li>
+
+            <li role="none">
+              <a role="menuitem" href="about-us.html" class="pill" aria-label="About Us">
+                <span class="hover-circle" aria-hidden="true"></span>
+                <span class="label-stack">
+                  <span class="pill-label">About Us</span>
+                  <span class="pill-label-hover" aria-hidden="true">About Us</span>
+                </span>
+              </a>
+            </li>
+
+            <li role="none" class="pill-item-dropdown">
+              <a role="menuitem" href="index.html#products" class="pill" aria-label="Products">
+                <span class="hover-circle" aria-hidden="true"></span>
+                <span class="label-stack">
+                  <span class="pill-label">Products</span>
+                  <span class="pill-label-hover" aria-hidden="true">Products</span>
+                </span>
+              </a>
+              <ul class="pill-dropdown-menu">
+                <li><a href="index.html#products">Sliding Door &amp; Windows</a></li>
+                <li><a href="index.html#products">Sliding Doors (Elegante &amp; Panorama)</a></li>
+                <li><a href="index.html#products">Casement Windows (Signature Series)</a></li>
+                <li><a href="index.html#products">Casement Doors</a></li>
+                <li><a href="index.html#products">Slide &amp; Fold Systems</a></li>
               </ul>
             </li>
 
-            <li class="nav-item"><a href="career.html" class="nav-link">Career</a></li>
-            <li class="nav-item active"><a href="contact-us.html" class="nav-link">Contact</a></li>
-          </ul>
-        </nav>
+            <li role="none">
+              <a role="menuitem" href="career.html" class="pill" aria-label="Career">
+                <span class="hover-circle" aria-hidden="true"></span>
+                <span class="label-stack">
+                  <span class="pill-label">Career</span>
+                  <span class="pill-label-hover" aria-hidden="true">Career</span>
+                </span>
+              </a>
+            </li>
 
-        <!-- CTA & Mobile Toggle -->
-        <div class="header-actions">
-          <a href="#contact-direct" class="btn btn-primary">Book Consultation</a>
-          <button class="mobile-toggle" aria-label="Toggle Navigation Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+            <li role="none">
+              <a role="menuitem" href="contact-us.html" class="pill is-active" aria-label="Contact">
+                <span class="hover-circle" aria-hidden="true"></span>
+                <span class="label-stack">
+                  <span class="pill-label">Contact</span>
+                  <span class="pill-label-hover" aria-hidden="true">Contact</span>
+                </span>
+              </a>
+            </li>
+
+            <li role="none">
+              <a role="menuitem" href="#contact-direct" class="pill pill-cta" aria-label="Book Consultation">
+                <span class="hover-circle" aria-hidden="true"></span>
+                <span class="label-stack">
+                  <span class="pill-label">Book Consultation</span>
+                  <span class="pill-label-hover" aria-hidden="true">Book Consultation</span>
+                </span>
+              </a>
+            </li>
+          </ul>
         </div>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button class="mobile-menu-button mobile-only" aria-label="Toggle menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </nav>
+
+      <!-- Mobile Popover Menu -->
+      <div class="mobile-menu-popover mobile-only" style="--base: #0f172a; --pill-bg: #ffffff; --hover-text: #ffffff; --pill-text: #0f172a;">
+        <ul class="mobile-menu-list">
+          <li><a href="index.html" class="mobile-menu-link">Home</a></li>
+          <li><a href="about-us.html" class="mobile-menu-link">About Us</a></li>
+          <li><a href="index.html#products" class="mobile-menu-link">Products</a></li>
+          <li><a href="career.html" class="mobile-menu-link">Career</a></li>
+          <li><a href="contact-us.html" class="mobile-menu-link is-active">Contact</a></li>
+          <li><a href="#contact-direct" class="mobile-menu-link cta-link">Book Consultation</a></li>
+        </ul>
       </div>
     </div>
   </header>
-
-  <!-- Mobile Drawer Menu -->
-  <div class="mobile-drawer-backdrop"></div>
-  <aside class="mobile-drawer" aria-label="Mobile Navigation">
-    <ul class="mobile-nav-list">
-      <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
-      <li class="mobile-nav-item"><a href="about-us.html" class="mobile-nav-link">About Us</a></li>
-      <li class="mobile-nav-item">
-        <a href="index.html#products" class="mobile-nav-link mobile-dropdown-toggle">
-          Products <span class="dropdown-arrow"></span>
-        </a>
-        <div class="mobile-submenu">
-          <a href="index.html#products">Sliding Door &amp; Windows</a>
-          <a href="index.html#products">Sliding Doors</a>
-          <a href="index.html#products">Casement Windows</a>
-          <a href="index.html#products">Casement Door</a>
-          <a href="index.html#products">Slide &amp; Fold</a>
-        </div>
-      </li>
-      <li class="mobile-nav-item"><a href="career.html" class="mobile-nav-link">Career</a></li>
-      <li class="mobile-nav-item"><a href="contact-us.html" class="mobile-nav-link">Contact &amp; Enquiry</a></li>
-    </ul>
-    <div style="margin-top: 30px;">
-      <a href="#contact-direct" class="btn btn-gold" style="width: 100%;">Enquire Now</a>
-    </div>
-  </aside>
 
   <!-- ==========================================================================
        Page Banner & Breadcrumbs
@@ -528,6 +523,7 @@
   </div>
 
   <!-- Scripts -->
+  <script src="js/gsap.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
