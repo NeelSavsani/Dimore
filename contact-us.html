@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" href="assets/logo.png">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=fixed">
 </head>
 <body>
 
@@ -37,17 +37,17 @@
   </div>
 
   <!-- ==========================================================================
-       Classic Architectural Header (ITLAS Style)
+       Floating & Fixed Architectural Header (Logo Left, Buttons Right)
        ========================================================================== -->
   <header class="site-header" role="banner">
-    <div class="container">
-      <div class="classic-header-inner">
-        <!-- Brand Logo -->
-        <a href="index.html" class="classic-brand" aria-label="Dimore Architectural Solutions">
-          <img src="assets/logo.png" alt="Dimore Logo" class="classic-brand-logo" />
-        </a>
+    <div class="classic-header-inner">
+      <!-- Brand Logo (Left Side) -->
+      <a href="index.html" class="classic-brand" aria-label="Dimore Architectural Solutions">
+        <img src="assets/logo.png" alt="Dimore Logo" class="classic-brand-logo" />
+      </a>
 
-        <!-- Desktop Navigation -->
+      <!-- Rest Navigation Links & Actions (Right Side) -->
+      <div class="classic-nav-right">
         <nav class="classic-desktop-nav" aria-label="Primary navigation">
           <ul class="classic-nav-menu" role="menubar">
             <li class="classic-nav-item" role="none">
@@ -60,7 +60,7 @@
                 Products <span class="nav-arrow-icon" aria-hidden="true"></span>
               </a>
 
-              <!-- Mega Menu Dropdown (ITLAS Style) -->
+              <!-- Mega Menu Dropdown -->
               <div class="classic-mega-menu" role="region" aria-label="Products directory">
                 <div class="container">
                   <div class="classic-mega-grid">
@@ -111,29 +111,29 @@
                   </div>
                 </div>
               </div>
-            </li>
+            </div>
+          </li>
 
-            <li class="classic-nav-item" role="none">
-              <a href="career.html" class="classic-nav-link" role="menuitem">Career</a>
-            </li>
+          <li class="classic-nav-item" role="none">
+            <a href="career.html" class="classic-nav-link" role="menuitem">Career</a>
+          </li>
 
-            <li class="classic-nav-item active" role="none">
-              <a href="contact-us.html" class="classic-nav-link" role="menuitem">Contact</a>
-            </li>
-          </ul>
-        </nav>
+          <li class="classic-nav-item active" role="none">
+            <a href="contact-us.html" class="classic-nav-link" role="menuitem">Contact</a>
+          </li>
+        </ul>
+      </nav>
 
-        <!-- Header Actions (CTA + Mobile Toggle) -->
-        <div class="classic-header-actions">
-          <a href="#contact-direct" class="btn-classic-cta">Book Consultation</a>
-          <button class="classic-mobile-toggle" aria-label="Toggle navigation menu">
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-      </div>
+      <a href="#contact-direct" class="btn-classic-cta">Book Consultation</a>
+
+      <!-- Mobile Toggle Button -->
+      <button class="classic-mobile-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+      </button>
     </div>
-  </header>
+  </div>
+</header>
 
   <!-- Classic Mobile Drawer -->
   <div class="classic-drawer-backdrop" aria-hidden="true"></div>

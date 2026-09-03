@@ -231,109 +231,59 @@ h1, h2, h3, h4, h5, h6 {
   border-color: var(--color-white);
 }
 
-/* ==========================================================================
-   Header & Navigation
-   ========================================================================== */
-.site-header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background: var(--color-white);
-  transition: var(--transition-normal);
-}
-
-.site-header.scrolled {
-  box-shadow: var(--shadow-md);
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(12px);
-}
 
 /* ==========================================================================
-   Classic Top Utility Strip (Inspired by itlas.com)
+   Classic Top Utility Strip (Hidden for Floating Fixed Navbar)
    ========================================================================== */
 .classic-top-bar {
-  background: var(--color-primary);
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.76rem;
-  letter-spacing: 0.08em;
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.classic-top-bar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.classic-top-info {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.classic-top-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.classic-top-item span.dot {
-  color: var(--color-secondary);
-}
-
-.classic-top-actions {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.classic-top-link {
-  color: rgba(255, 255, 255, 0.7);
-  transition: color var(--transition-fast);
-}
-
-.classic-top-link:hover {
-  color: var(--color-secondary);
+  display: none !important;
 }
 
 /* ==========================================================================
-   Classic Architectural Header (Inspired by itlas.com)
+   Floating & Fixed Architectural Navbar (Fixed Position Permanently Locked)
    ========================================================================== */
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--color-border);
-  transition: all 0.3s ease;
+  position: fixed !important;
+  top: 20px !important;
+  left: clamp(16px, 3vw, 40px) !important;
+  right: clamp(16px, 3vw, 40px) !important;
+  width: calc(100% - clamp(32px, 6vw, 80px)) !important;
+  max-width: 1720px;
+  margin: 0 auto;
+  z-index: 10000 !important;
+  background: #ffffff;
+  border: 1px solid rgba(18, 20, 23, 0.08);
+  box-shadow: 0 10px 30px -5px rgba(18, 20, 23, 0.08);
+  border-radius: var(--radius-sm);
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+  padding: 0 clamp(20px, 3vw, 44px);
+  box-sizing: border-box;
 }
 
 .site-header.scrolled {
-  background: #ffffff;
-  box-shadow: 0 4px 20px rgba(18, 20, 23, 0.05);
+  top: 20px !important;
+  box-shadow: 0 14px 40px rgba(18, 20, 23, 0.12);
+  background: rgba(255, 255, 255, 0.99);
 }
 
 .classic-header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 0;
+  height: 80px;
   position: relative;
 }
 
-/* Classic Brand Logo */
+/* Brand Logo (Left Side) */
 .classic-brand {
   display: flex;
   align-items: center;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .classic-brand-logo {
-  height: 42px;
+  height: 40px;
   width: auto;
   object-fit: contain;
   transition: opacity 0.3s ease;
@@ -343,11 +293,17 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.85;
 }
 
-/* Classic Desktop Navigation Links */
+/* Rest Navigation Links & Actions (Right Side) */
+.classic-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
 .classic-nav-menu {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 32px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -361,21 +317,22 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-size: 0.82rem;
   font-weight: 500;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-primary);
-  padding: 14px 0;
+  padding: 10px 0;
   display: inline-flex;
   align-items: center;
   gap: 6px;
   position: relative;
   transition: color 0.25s ease;
+  white-space: nowrap;
 }
 
 .classic-nav-link::after {
   content: '';
   position: absolute;
-  bottom: 8px;
+  bottom: 2px;
   left: 0;
   width: 0%;
   height: 1.5px;
@@ -409,21 +366,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   Architectural Mega Menu (Products Dropdown like itlas.com)
+   Architectural Mega Menu for Floating Navbar
    ========================================================================== */
 .classic-mega-menu {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 1px);
   left: 0;
   right: 0;
   width: 100%;
   background: #ffffff;
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-  box-shadow: 0 30px 60px rgba(18, 20, 23, 0.08);
+  border: 1px solid rgba(18, 20, 23, 0.08);
+  border-top: none;
+  box-shadow: 0 25px 50px rgba(18, 20, 23, 0.1);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(8px);
+  transform: translateY(6px);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
   z-index: 999;
@@ -723,12 +681,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 992px) {
-  .classic-nav-menu,
-  .classic-mega-menu {
+  .site-header {
+    position: fixed !important;
+    top: 10px !important;
+    left: 12px !important;
+    right: 12px !important;
+    width: calc(100% - 24px) !important;
+    padding: 0 16px;
+  }
+  .classic-header-inner {
+    height: 64px;
+  }
+  .classic-desktop-nav,
+  .classic-nav-right .btn-classic-cta {
     display: none;
+  }
+  .classic-brand-logo {
+    height: 32px;
   }
   .classic-mobile-toggle {
     display: flex;
+  }
+  .classic-mega-menu {
+    display: none;
   }
 }
 
@@ -737,12 +712,13 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 .classic-hero {
   position: relative;
-  min-height: 88vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   background-color: var(--color-primary);
   color: #ffffff;
   overflow: hidden;
+  padding-top: 60px;
 }
 
 .classic-hero-bg {
@@ -775,7 +751,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 2;
   max-width: 980px;
-  padding: 100px 0 120px;
+  padding: 130px 0 100px;
 }
 
 .classic-hero-pill {
@@ -925,7 +901,7 @@ h1, h2, h3, h4, h5, h6 {
 .classic-page-banner {
   background-color: var(--color-primary);
   color: #ffffff;
-  padding: 96px 0 84px;
+  padding: 160px 0 90px;
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
