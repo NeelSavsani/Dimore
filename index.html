@@ -10,7 +10,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=herofit4">
+  <link rel="stylesheet" href="css/style.css?v=walft">
 </head>
 <body>
 
@@ -59,63 +59,136 @@
               <a href="about-us.html" class="classic-nav-link" role="menuitem">About Us</a>
             </li>
 
-            <!-- Products Mega Menu Trigger -->
-            <li class="classic-nav-item has-mega-menu" role="none">
-              <a href="#products" class="classic-nav-link" role="menuitem">
+            <!-- Products Flyout Dropdown -->
+            <li class="classic-nav-item has-dropdown" role="none">
+              <a href="#products" class="classic-nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false">
                 Products <span class="nav-arrow-icon" aria-hidden="true"></span>
               </a>
 
-              <!-- Mega Menu Dropdown -->
-              <div class="classic-mega-menu" role="region" aria-label="Products directory">
-                <div class="container">
-                  <div class="classic-mega-grid">
-                    <!-- Column 1 -->
-                    <div class="mega-col">
-                      <span class="mega-col-header">01 // Sliding Systems</span>
-                      <ul class="mega-links-list">
-                        <li><a href="#products" class="mega-link"><span>Dura Slim</span> <span class="badge-spec">Minimal</span></a></li>
-                        <li><a href="#products" class="mega-link"><span>Dura Sleek</span> <span class="badge-spec">Thermal</span></a></li>
-                        <li><a href="#products" class="mega-link"><span>Vista Slim</span> <span class="badge-spec">Panorama</span></a></li>
-                        <li><a href="#products" class="mega-link"><span>Vista Sleek</span> <span class="badge-spec">Heavy Duty</span></a></li>
-                      </ul>
-                    </div>
+              <!-- Level 1 Dropdown Menu -->
+              <ul class="classic-dropdown-menu" role="menu" aria-label="Products Submenu">
+                <!-- 1. Sliding Door & Windows -->
+                <li class="classic-dropdown-item has-submenu" role="none">
+                  <a href="#product-sliding-door-windows" class="classic-dropdown-link" role="menuitem">
+                    <span class="item-title">Sliding Door &amp; Windows</span>
+                    <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </a>
+                  <!-- Level 2 Submenu -->
+                  <ul class="classic-submenu" role="menu" aria-label="Sliding Door & Windows Models">
+                    <li class="classic-submenu-item" role="none">
+                      <a href="#product-sliding-door-windows" class="classic-submenu-link" role="menuitem"><span class="item-title">Dura Slim</span></a>
+                    </li>
+                    <li class="classic-submenu-item" role="none">
+                      <a href="#product-sliding-door-windows" class="classic-submenu-link" role="menuitem"><span class="item-title">Dura</span></a>
+                    </li>
+                    <li class="classic-submenu-item" role="none">
+                      <a href="#product-sliding-door-windows" class="classic-submenu-link" role="menuitem"><span class="item-title">Vista Slim</span></a>
+                    </li>
+                    <li class="classic-submenu-item" role="none">
+                      <a href="#product-sliding-door-windows" class="classic-submenu-link" role="menuitem"><span class="item-title">Vista</span></a>
+                    </li>
+                  </ul>
+                </li>
 
-                    <!-- Column 2 -->
-                    <div class="mega-col">
-                      <span class="mega-col-header">02 // Architectural Doors</span>
-                      <ul class="mega-links-list">
-                        <li><a href="#products" class="mega-link"><span>Elegante Series</span> <span class="badge-spec">Glass Pivot</span></a></li>
-                        <li><a href="#products" class="mega-link"><span>Panorama Doors</span> <span class="badge-spec">Floor-to-Ceiling</span></a></li>
-                        <li><a href="#products" class="mega-link"><span>Single &amp; Double Doors</span> <span class="badge-spec">Casement</span></a></li>
-                        <li><a href="#products" class="mega-link"><span>French Architectural</span> <span class="badge-spec">Precision</span></a></li>
-                      </ul>
-                    </div>
+                <!-- 2. Sliding Doors -->
+                <li class="classic-dropdown-item has-submenu" role="none">
+                  <a href="#product-sliding-doors" class="classic-dropdown-link" role="menuitem">
+                    <span class="item-title">Sliding Doors</span>
+                    <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </a>
+                  <!-- Level 2 Submenu -->
+                  <ul class="classic-submenu" role="menu" aria-label="Sliding Doors Models">
+                    <li class="classic-submenu-item" role="none">
+                      <a href="#product-sliding-doors" class="classic-submenu-link" role="menuitem"><span class="item-title">Elegante</span></a>
+                    </li>
+                    <li class="classic-submenu-item" role="none">
+                      <a href="#product-sliding-doors" class="classic-submenu-link" role="menuitem"><span class="item-title">Panorama</span></a>
+                    </li>
+                  </ul>
+                </li>
 
-                    <!-- Column 3 -->
-                    <div class="mega-col">
-                      <span class="mega-col-header">03 // Windows &amp; Folding</span>
-                      <ul class="mega-links-list">
-                        <li><a href="#products" class="mega-link"><span>Signature Series</span> <span class="badge-spec">Tilt &amp; Turn</span></a></li>
-                        <li><a href="#products" class="mega-link"><span>Slick Series</span> <span class="badge-spec">Top &amp; Side</span></a></li>
-                        <li><a href="#products" class="mega-link"><span>Slide &amp; Fold Systems</span> <span class="badge-spec">Multi-Track</span></a></li>
-                        <li><a href="#products" class="mega-link"><span>Acoustic Dust-Free</span> <span class="badge-spec">German Tech</span></a></li>
+                <!-- 3. Casement Windows -->
+                <li class="classic-dropdown-item has-submenu" role="none">
+                  <a href="#product-casement-windows" class="classic-dropdown-link" role="menuitem">
+                    <span class="item-title">Casement Windows</span>
+                    <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </a>
+                  <!-- Level 2 Submenu -->
+                  <ul class="classic-submenu" role="menu" aria-label="Casement Windows Series">
+                    <li class="classic-submenu-item has-nested-submenu" role="none">
+                      <a href="#product-casement-windows" class="classic-submenu-link" role="menuitem">
+                        <span class="item-title">Signature Series</span>
+                        <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                      </a>
+                      <!-- Level 3 Nested Submenu -->
+                      <ul class="classic-nested-submenu" role="menu" aria-label="Signature Series Windows">
+                        <li><a href="#product-casement-windows" class="classic-nested-link" role="menuitem">Pivot Window</a></li>
+                        <li><a href="#product-casement-windows" class="classic-nested-link" role="menuitem">Parallel Window</a></li>
+                        <li><a href="#product-casement-windows" class="classic-nested-link" role="menuitem">Fixed Pane Window</a></li>
+                        <li><a href="#product-casement-windows" class="classic-nested-link" role="menuitem">French Window</a></li>
+                        <li><a href="#product-casement-windows" class="classic-nested-link" role="menuitem">Tilt &amp; Turn Windows</a></li>
                       </ul>
-                    </div>
+                    </li>
+                    <li class="classic-submenu-item has-nested-submenu" role="none">
+                      <a href="#product-casement-windows" class="classic-submenu-link" role="menuitem">
+                        <span class="item-title">Slick Series</span>
+                        <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                      </a>
+                      <!-- Level 3 Nested Submenu -->
+                      <ul class="classic-nested-submenu" role="menu" aria-label="Slick Series Windows">
+                        <li><a href="#product-casement-windows" class="classic-nested-link" role="menuitem">Fixed Pane Windows</a></li>
+                        <li><a href="#product-casement-windows" class="classic-nested-link" role="menuitem">Top Hung Window</a></li>
+                        <li><a href="#product-casement-windows" class="classic-nested-link" role="menuitem">Side Hung Window</a></li>
+                        <li><a href="#product-casement-windows" class="classic-nested-link" role="menuitem">French Window</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
 
-                    <!-- Column 4: Spotlight -->
-                    <div class="mega-col">
-                      <div class="mega-spotlight-card">
-                        <img src="assets/gallery1.jpg" alt="Dimore Bespoke Aluminium System" class="mega-spotlight-img" />
-                        <div class="mega-spotlight-content">
-                          <span class="mega-spotlight-badge">Craftsmanship</span>
-                          <h4 class="mega-spotlight-title">Bespoke Architectural Aluminium Systems</h4>
-                          <a href="about-us.html" class="mega-spotlight-link">Our Philosophy &rarr;</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                <!-- 4. Casement Door -->
+                <li class="classic-dropdown-item has-submenu" role="none">
+                  <a href="#product-casement-door" class="classic-dropdown-link" role="menuitem">
+                    <span class="item-title">Casement Door</span>
+                    <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </a>
+                  <!-- Level 2 Submenu -->
+                  <ul class="classic-submenu" role="menu" aria-label="Casement Door Series">
+                    <li class="classic-submenu-item has-nested-submenu" role="none">
+                      <a href="#product-casement-door" class="classic-submenu-link" role="menuitem">
+                        <span class="item-title">Signature Series</span>
+                        <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                      </a>
+                      <!-- Level 3 Nested Submenu -->
+                      <ul class="classic-nested-submenu" role="menu" aria-label="Signature Series Doors">
+                        <li><a href="#product-casement-door" class="classic-nested-link" role="menuitem">Single Door</a></li>
+                        <li><a href="#product-casement-door" class="classic-nested-link" role="menuitem">Double Door</a></li>
+                        <li><a href="#product-casement-door" class="classic-nested-link" role="menuitem">French Door</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+
+                <!-- 5. Slide & Fold -->
+                <li class="classic-dropdown-item" role="none">
+                  <a href="#product-slide-fold" class="classic-dropdown-link" role="menuitem">
+                    <span class="item-title">Slide &amp; Fold</span>
+                  </a>
+                </li>
+              </ul>
             </li>
 
             <li class="classic-nav-item" role="none">
@@ -160,10 +233,35 @@
             Products <span class="nav-arrow-icon"></span>
           </a>
           <div class="classic-drawer-sublinks">
-            <a href="#products">&bull; Sliding Systems (Dura Slim, Vista)</a>
-            <a href="#products">&bull; Architectural Doors (Elegante, Panorama)</a>
-            <a href="#products">&bull; Casement Windows (Signature, Slick)</a>
-            <a href="#products">&bull; Slide &amp; Fold Systems</a>
+            <span class="drawer-subgroup-title">Sliding Door &amp; Windows</span>
+            <div class="drawer-nested-list">
+              <a href="#product-sliding-door-windows">&bull; Dura Slim</a>
+              <a href="#product-sliding-door-windows">&bull; Dura</a>
+              <a href="#product-sliding-door-windows">&bull; Vista Slim</a>
+              <a href="#product-sliding-door-windows">&bull; Vista</a>
+            </div>
+
+            <span class="drawer-subgroup-title">Sliding Doors</span>
+            <div class="drawer-nested-list">
+              <a href="#product-sliding-doors">&bull; Elegante</a>
+              <a href="#product-sliding-doors">&bull; Panorama</a>
+            </div>
+
+            <span class="drawer-subgroup-title">Casement Windows</span>
+            <div class="drawer-nested-list">
+              <a href="#product-casement-windows">&bull; Signature Series</a>
+              <a href="#product-casement-windows">&bull; Slick Series</a>
+            </div>
+
+            <span class="drawer-subgroup-title">Casement Door</span>
+            <div class="drawer-nested-list">
+              <a href="#product-casement-door">&bull; Signature Single / Double</a>
+            </div>
+
+            <span class="drawer-subgroup-title">Folding Systems</span>
+            <div class="drawer-nested-list">
+              <a href="#product-slide-fold">&bull; Slide &amp; Fold Systems</a>
+            </div>
           </div>
         </div>
         <a href="project.html" class="classic-drawer-link">Project</a>
@@ -186,7 +284,14 @@
        Classic Monumental Architectural Hero Section
        ========================================================================== -->
   <section class="classic-hero" id="hero">
-    <img src="assets/pf(10).jpg" alt="Dimore Architectural Glass Showcase" class="classic-hero-bg" />
+    <div class="classic-hero-slider" id="heroSlider">
+      <img src="assets/pf(2).jpg" alt="Dimore Architectural Showcase 1" class="classic-hero-slide active" />
+      <img src="assets/pf(3).jpg" alt="Dimore Architectural Showcase 2" class="classic-hero-slide" />
+      <img src="assets/pf(4).jpg" alt="Dimore Architectural Showcase 3" class="classic-hero-slide" />
+      <img src="assets/pf(5).jpg" alt="Dimore Architectural Showcase 4" class="classic-hero-slide" />
+      <img src="assets/pf(6).jpg" alt="Dimore Architectural Showcase 5" class="classic-hero-slide" />
+      <img src="assets/pf(7).jpg" alt="Dimore Architectural Showcase 6" class="classic-hero-slide" />
+    </div>
     <div class="classic-hero-overlay"></div>
 
     <div class="container">
@@ -454,7 +559,7 @@
 
       <div class="products-grid">
         <!-- Product 1 -->
-        <article class="product-card">
+        <article class="product-card" id="product-sliding-door-windows">
           <div class="product-thumb">
             <span class="product-tag">Ultra Slim Sightlines</span>
             <img src="assets/h5zMOPy6vssYPAYrIQN5Kl7MQ2Cyr2yjTleXZhUi.webp" alt="Sliding Door & Windows" loading="lazy">
@@ -478,7 +583,7 @@
         </article>
 
         <!-- Product 2 -->
-        <article class="product-card">
+        <article class="product-card" id="product-sliding-doors">
           <div class="product-thumb">
             <span class="product-tag">Panoramic Glass</span>
             <img src="assets/VlvwTCWUInO2kbXEV2O6TIyWyqGc15W0rs0OkFX5.webp" alt="Sliding Doors" loading="lazy">
@@ -502,7 +607,7 @@
         </article>
 
         <!-- Product 3 -->
-        <article class="product-card">
+        <article class="product-card" id="product-casement-windows">
           <div class="product-thumb">
             <span class="product-tag">Tilt &amp; Turn / Pivot</span>
             <img src="assets/oGKI8PesKnfRfy2ZSKMauaVb7CP5LvAX2WUnVjhH.webp" alt="Casement Windows" loading="lazy">
@@ -526,7 +631,7 @@
         </article>
 
         <!-- Product 4 -->
-        <article class="product-card">
+        <article class="product-card" id="product-casement-door">
           <div class="product-thumb">
             <span class="product-tag">High Security Multi-Lock</span>
             <img src="assets/NkplDigxt1WSq6quHzfXZHIJqixvvDyEighc0Rza.webp" alt="Casement Door" loading="lazy">
@@ -550,7 +655,7 @@
         </article>
 
         <!-- Product 5 -->
-        <article class="product-card">
+        <article class="product-card" id="product-slide-fold">
           <div class="product-thumb">
             <span class="product-tag">Full Aperture Opening</span>
             <img src="assets/PbCZldJrtj8cfPJLfmD8kFkql2DWAyIc1t6i9Rrt.jpg" alt="Slide & Fold" loading="lazy">
@@ -891,14 +996,15 @@
   </div>
 
   <!-- ==========================================================================
-       Floating Action Buttons (WhatsApp & Scroll To Top)
+       Floating Action Buttons (WhatsApp on Left, Scroll To Top on Right)
        ========================================================================== -->
+  <!-- WhatsApp Quick Connect (Bottom Left) -->
+  <a href="https://wa.me/919016931030?text=Hello%20Dimore%20Team%2C%20I%20am%20interested%20in%20your%20aluminium%20windows%20and%20doors." target="_blank" rel="noopener noreferrer" class="floating-btn btn-whatsapp" title="Chat on WhatsApp" aria-label="WhatsApp">
+    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
+
+  <!-- Scroll To Top (Bottom Right) -->
   <div class="floating-actions">
-    <!-- WhatsApp Quick Connect -->
-    <a href="https://wa.me/919016931030?text=Hello%20Dimore%20Team%2C%20I%20am%20interested%20in%20your%20aluminium%20windows%20and%20doors." target="_blank" rel="noopener noreferrer" class="floating-btn btn-whatsapp" title="Chat on WhatsApp" aria-label="WhatsApp">
-      <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-    </a>
-    <!-- Scroll To Top -->
     <button class="floating-btn btn-scroll-top" title="Scroll To Top" aria-label="Scroll To Top">
       <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
     </button>
@@ -906,6 +1012,6 @@
 
   <!-- Scripts -->
   <script src="js/gsap.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=heroslider"></script>
 </body>
 </html>

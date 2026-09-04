@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCareerModal();
   initPageContactForm();
   initScrollTop();
+  initHeroSlideshow();
 });
 
 /* ==========================================================================
@@ -664,5 +665,57 @@ function initClassicNav() {
   });
 }
 
+/* ==========================================================================
+   11. Classic Hero Background Slideshow (Smooth Fade In / Fade Out)
+   ========================================================================== */
+function initHeroSlideshow() {
+  const slides = document.querySelectorAll('.classic-hero-slide');
+  if (!slides || slides.length < 2) return;
 
+  let currentIndex = 0;
+  const slideInterval = 5000; // 5 seconds per slide
+  let timer = null;
 
+  function nextSlide() {
+    const prevSlide = slides[currentIndex];
+    currentIndex = (currentIndex + 1) % slides.length;
+    const nextSlide = slides[currentIndex];
+
+    // Clean up older classes
+    slides.forEach((s) => {
+      s.classList.remove('prev');
+      if (s !== prevSlide && s !== nextSlide) {
+        s.classList.remove('active');
+      }
+    });
+
+    // Crossfade: outgoing slide transitions out, incoming slide transitions in
+    prevSlide.classList.add('prev');
+    prevSlide.classList.remove('active');
+    nextSlide.classList.add('active');
+  }
+
+  function start() {
+    if (!timer) {
+      timer = setInterval(nextSlide, slideInterval);
+    }
+  }
+
+  function stop() {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+  }
+
+  start();
+
+  // Pause slideshow when tab is hidden to save performance and avoid transition backlog
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      stop();
+    } else {
+      start();
+    }
+  });
+}
