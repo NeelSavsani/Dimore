@@ -3227,3 +3227,389 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: 24px;
   border-left: 2px solid var(--color-secondary);
 }
+
+/* ==========================================================================
+   Product Detail Page (Dura Slim & Signature Systems)
+   ========================================================================== */
+.product-detail-section {
+  padding: 100px 0;
+  background-color: #ffffff;
+}
+
+.product-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: clamp(40px, 5vw, 80px);
+  align-items: start;
+}
+
+.product-profile-card {
+  position: sticky;
+  top: 120px;
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(18, 20, 23, 0.04);
+  transition: all 0.3s ease;
+}
+
+.product-profile-card:hover {
+  border-color: var(--color-secondary);
+  box-shadow: 0 16px 40px rgba(191, 161, 104, 0.12);
+}
+
+.product-profile-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.profile-img-wrap {
+  width: 100%;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(18, 20, 23, 0.06);
+}
+
+.profile-img-wrap img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.product-profile-card:hover .profile-img-wrap img {
+  transform: scale(1.04);
+}
+
+.profile-card-footer {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.profile-footer-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-footer-stat .stat-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.profile-footer-stat .stat-value {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.product-overview-content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.product-lead-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--color-text-main);
+  font-weight: 400;
+}
+
+.features-list-card {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 36px 32px;
+}
+
+.features-list-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  margin-bottom: 24px;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.features-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.features-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 0.96rem;
+  color: var(--color-text-main);
+  line-height: 1.55;
+}
+
+.checklist-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(191, 161, 104, 0.15);
+  color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.checklist-icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* Technical Specifications Table */
+.product-specs-section {
+  padding: 80px 0;
+  background: var(--color-bg-light);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.spec-item-card {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: all 0.25s ease;
+}
+
+.spec-item-card:hover {
+  border-color: var(--color-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(18, 20, 23, 0.05);
+}
+
+.spec-item-label {
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.spec-item-value {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* Window Style Showcase */
+.window-styles-section {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.style-config-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.style-config-card {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.style-config-card:hover {
+  border-color: var(--color-secondary);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(18, 20, 23, 0.08);
+}
+
+.style-config-img {
+  width: 100%;
+  height: 200px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.style-config-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.style-config-body {
+  padding: 24px;
+}
+
+.style-config-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.style-config-desc {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* Customization 5 Pillars */
+.customization-section {
+  padding: 100px 0;
+  background: var(--color-primary);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.customization-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(191, 161, 104, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.customization-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-top: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.customization-pillar-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.customization-pillar-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-secondary);
+  transform: translateY(-4px);
+}
+
+.pillar-icon-box {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: rgba(191, 161, 104, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-secondary);
+}
+
+.pillar-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+}
+
+.pillar-desc {
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.6;
+}
+
+/* Advantage Pillars */
+.advantage-section {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.advantage-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  margin-top: 50px;
+}
+
+.advantage-card {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 32px 28px;
+  transition: all 0.3s ease;
+}
+
+.advantage-card:hover {
+  border-color: var(--color-secondary);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(18, 20, 23, 0.06);
+}
+
+.advantage-card h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.advantage-card p {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 992px) {
+  .product-detail-grid {
+    grid-template-columns: 1fr;
+  }
+  .product-profile-card {
+    position: static;
+  }
+}
