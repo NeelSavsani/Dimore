@@ -1846,17 +1846,8 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 .advantage-section {
   padding: 100px 0;
-  background: linear-gradient(180deg, #090d16 0%, #0f172a 100%);
-  color: var(--color-white);
+  background: var(--color-white);
   position: relative;
-}
-
-.advantage-section .section-title {
-  color: var(--color-white);
-}
-
-.advantage-section .section-subtitle {
-  color: var(--color-text-light);
 }
 
 .advantage-grid {
@@ -1886,12 +1877,12 @@ h1, h2, h3, h4, h5, h6 {
   width: 72px;
   height: 72px;
   margin: 0 auto 20px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(18, 20, 23, 0.04);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(18, 20, 23, 0.08);
   transition: var(--transition-fast);
 }
 
@@ -3562,10 +3553,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Advantage Pillars */
-.advantage-section {
-  padding: 100px 0;
-  background: #ffffff;
-}
 
 .advantage-cards-grid {
   display: grid;
