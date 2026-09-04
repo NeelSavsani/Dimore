@@ -299,13 +299,13 @@ h1, h2, h3, h4, h5, h6 {
 .classic-nav-right {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: clamp(18px, 1.8vw, 28px);
 }
 
 .classic-nav-menu {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: clamp(18px, 1.8vw, 28px);
   list-style: none;
   margin: 0;
   padding: 0;
